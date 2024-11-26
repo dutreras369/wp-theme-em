@@ -38,7 +38,7 @@
                                     <div class="carousel-caption d-flex flex-column justify-content-center align-items-center position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.5);">
                                         <div class="container text-center">
                                             <!-- Título en animación -->
-                                            <h5 class="ml3 text-white"><?php echo esc_html($title); ?></h5>
+                                            <h5 class="text-white"><?php echo esc_html($title); ?></h5>
                                             <!-- Descripción interactiva que invita a la introspección -->
                                             <p class="lead text-white"><?php echo esc_html($body); ?></p>
                                             <!-- Botón hacia Spotify con efecto visual -->
@@ -91,7 +91,7 @@ function ev_about_shortcode() {
 
                 <!-- Botón de suscripción -->
                 <button type="button" class="btn btn-lg p-3 btn-gold" data-bs-toggle="modal" data-bs-target="#subscribeModal">
-                    <i class="bi bi-envelope-fill me-2"></i> ¡Suscríbete!
+                    <i class="bi bi-envelope-fill me-2"></i> ¡Agenda!
                 </button>
             </div>
 

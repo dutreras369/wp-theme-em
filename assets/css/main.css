@@ -21221,7 +21221,7 @@ textarea.form-control-lg {
   align-items: center;
 }
 .announcement-bar__list li .bi {
-  background-color: var(--bs-blue-dark);
+  background-color: var(--bs-gold);
   color: var(--bs-white);
   display: flex;
   justify-content: center;
