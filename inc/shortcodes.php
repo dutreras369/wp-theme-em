@@ -43,7 +43,7 @@
                                             <p class="lead text-white"><?php echo esc_html($body); ?></p>
                                             <!-- Botón hacia Spotify con efecto visual -->
                                             <a href="https://open.spotify.com/artist/TU_SPOTIFY_URL" target="_blank" class="btn btn-spotify btn-lg shadow-lg">
-                                                Escucha en Spotify <i class="bi bi-spotify rounded-circle"></i>
+                                                Agenda <i class="bi bi-calendar rounded-circle"></i>
                                             </a>
                                         </div>
                                     </div>
@@ -91,7 +91,7 @@ function ev_about_shortcode() {
 
                 <!-- Botón de suscripción -->
                 <button type="button" class="btn btn-lg p-3 btn-gold" data-bs-toggle="modal" data-bs-target="#subscribeModal">
-                    <i class="bi bi-envelope-fill me-2"></i> ¡Agenda!
+                    Agenda <i class="bi bi-calendar me-2 text-white"></i> 
                 </button>
             </div>
 
