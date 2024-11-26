@@ -1,0 +1,20 @@
+
+// Utilidades y funciones
+@import 'utilities';
+
+// Importa el framework Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+// Estilos generales
+@import 'components/header';
+@import 'components/carousel';
+@import 'components/footer';
+@import 'components/transition';
+@import 'components/post';
+@import 'components/blog';
+@import 'components/about-me'; 
+@import 'components/calendar'; 
+@import 'components/hero';
+@import 'components/music-section';
+@import 'components/support';
+@import 'components/services-programs';

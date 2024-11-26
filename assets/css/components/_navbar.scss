@@ -1,0 +1,78 @@
+.main-navigation {
+    background-color: var(--bs-primary);
+    font-weight: 600;
+
+    .menu-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+
+            li {
+                margin: 0 15px;
+                position: relative;
+
+                a {
+                    text-decoration: none;
+                    color: white;
+                    font-size: 1rem;
+                    padding: 0.6rem 1.4rem;
+                    display: inline-block;
+                    transition: color 0.3s ease;
+                    
+                    &:hover {
+                        color: var(--bs-secondary);
+                    }
+                }
+            }
+        }
+    }
+
+    /* Ocultar el menú en móviles por defecto */
+    .menu-container {
+        display: none;
+    }
+
+    /* Mostrar el menú cuando se abre en móviles */
+    &.menu-open .menu-container {
+        display: block;
+        ul {
+            flex-direction: column;
+            li {
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+
+    /* Estilos específicos para dispositivos móviles */
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+        
+        .menu-container ul {
+            display: block;
+        }
+    }
+
+    /* Estilos en escritorio: Mostrar menú normalmente */
+    @media (min-width: 769px) {
+        .menu-container {
+            display: flex;
+            ul {
+                flex-direction: row;
+            }
+        }
+
+        .menu-toggle {
+            display: none; /* Ocultar el botón de toggle en escritorio */
+        }
+    }
+}

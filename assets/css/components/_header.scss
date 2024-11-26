@@ -1,0 +1,172 @@
+/*** Header ***/
+
+/* Barra de anuncios */
+.announcement-bar {
+    font-size: 0.85rem;
+    background-color: var(--bs-primary);
+    color: var(--bs-light);
+    padding: 0.5rem 0;
+    text-align: center;
+
+    &__list {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        display: inline-flex;
+        gap: 1rem; /* Espacio entre iconos */
+
+        li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .bi {
+                background-color: var(--bs-blue-dark);
+                color: var(--bs-white);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                transition:
+                    background-color 0.3s ease,
+                    transform 0.3s ease;
+
+                &:hover {
+                    background-color: var(--bs-cyan); /* Cambio de color al pasar el ratón */
+                    transform: scale(1.1); /* Efecto de crecimiento suave */
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(lg) {
+        display: none; /* Ocultar en dispositivos móviles */
+    }
+}
+
+/* Estilos del header */
+.site-header {
+    background-color: var(--bs-secondary); /* Fondo oscuro y elegante */
+    color: var(--bs-white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil debajo del header */
+    position: relative;
+    z-index: 10;
+
+    /* Logo */
+    &__logo {
+        .custom-logo-link {
+            img {
+                width: 8rem; /* Tamaño del logo ligeramente mayor */
+                filter: brightness(0.9); /* Oscurecer ligeramente el logo */
+                transition: filter 0.3s ease;
+
+                &:hover {
+                    filter: brightness(1); /* Restaurar brillo al pasar el ratón */
+                }
+            }
+        }
+    }
+
+    /* Menú de navegación principal */
+    .main-navigation {
+        background-color: transparent; /* Fondo transparente */
+        text-align: center;
+
+        /* Estilo del ul principal del menú */
+        ul {
+            list-style: none; /* Quita las viñetas */
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center; /* Centra los elementos del menú */
+            gap: 2rem; /* Espaciado entre los ítems del menú */
+        }
+
+        /* Estilos para los elementos del menú (li) */
+        li.menu-item {
+            display: inline-block;
+            position: relative;
+            padding: 0.5rem 0;
+            margin: 0;
+        }
+
+        /* Estilo para los enlaces del menú */
+        a {
+            font-family:  "Libre Baskerville", serif !important;
+            text-decoration: none; /* Quitar subrayado de los links */
+            color: var(--bs-white); /* Color blanco para los enlaces */
+            font-size: 1.1rem; /* Tamaño de texto */
+            font-weight: 700; /* Peso del texto */
+            padding: 0.5rem 1rem; /* Espaciado interno del enlace */
+            transition:
+                color 0.3s ease,
+                border-bottom 0.3s ease; /* Transición suave para hover */
+
+            &:hover {
+                color: var(--bs-selector); /* Cambiar color en hover */
+                border-bottom: 2px solid var(--bs-selector); /* Subrayado elegante en hover */
+            }
+
+            &:focus,
+            &:visited {
+                color: var(--bs-white); /* Mantener el color blanco después de ser visitado o enfocado */
+                border-bottom: none; /* Quitar subrayado de links visitados */
+            }
+        }
+
+        /* Estilo para el ítem activo */
+        .current-menu-item > a {
+            color: var(--bs-selector); /* Color diferente para el ítem activo */
+            border-bottom: 2px solid var(--bs-selector); /* Subrayado para el ítem activo */
+            transition:
+                color 0.3s ease,
+                border-bottom 0.3s ease; /* Transición para el activo */
+        }
+
+        /* Ocultar el menú en pantallas pequeñas y mostrar con el toggle */
+        @include media-breakpoint-down(md) {
+            ul {
+                display: none; /* Ocultar el menú en móvil */
+                flex-direction: column; /* Colocar los ítems del menú en columna */
+                background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro */
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 100%;
+                z-index: 9999;
+                padding: 1rem;
+            }
+
+            /* Mostrar el menú cuando se activa el toggle */
+            &.menu-open ul {
+                display: flex !important; /* Mostrar el menú en dispositivos móviles cuando está abierto */
+            }
+        }
+    }
+
+    /* Botón de menú en dispositivos móviles */
+    .menu-toggle {
+        background: none;
+        border: none;
+        color: var(--bs-white);
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: var(--bs-secondary);
+        }
+
+        @include media-breakpoint-up(md) {
+            display: none; /* Ocultar botón en pantallas más grandes */
+        }
+    }
+}
+
+/* Ajuste de altura y alineación */
+.header {
+    height: auto;
+    min-height: 100px; /* Asegura que el header tenga suficiente altura */
+}

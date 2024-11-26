@@ -1,0 +1,30 @@
+#music-section {
+    background-color: #f0f8ff; // Un fondo azul claro
+  
+    h2 {
+      color: #007bff; // Azul primario para destacar el título
+      font-size: 2.5rem;
+    }
+  
+    .lead {
+      color: #6c757d; // Color gris sutil para el texto
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+    }
+  
+    .embed-responsive {
+      overflow: hidden;
+      border-radius: 15px; // Esquinas redondeadas
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); // Sombra suave
+  
+      iframe {
+        transition: transform 0.3s ease, box-shadow 0.3s ease; // Transiciones suaves
+      }
+  
+      &:hover iframe {
+        transform: scale(1.02); // Ligera ampliación en hover
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); // Sombra más fuerte en hover
+      }
+    }
+  }
+  

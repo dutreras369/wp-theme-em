@@ -1,0 +1,174 @@
+/*** Footer ***/
+
+.site-footer {
+    background-color: var(--bs-primary);
+    color: white;
+
+    .container {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    // Estilos para los widgets del footer
+    .row {
+        .widget {
+            margin-bottom: 1.5rem;
+
+            h3 {
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-bottom: 1rem;
+                color: var(--bs-light);
+
+                // Centrar los títulos en pantallas móviles
+                @media (max-width: 768px) {
+                    text-align: center;
+                }
+
+                // Alinear los títulos a la izquierda en pantallas grandes
+                @media (min-width: 769px) {
+                    text-align: left;
+                }
+            }
+
+            p,
+            li {
+                font-size: 0.9rem;
+                color: var(--bs-light);
+                margin-bottom: 0.5rem;
+            }
+
+            a {
+                color: var(--bs-light);
+                text-decoration: none;
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: var(--bs-secondary); // Color de hover
+                }
+            }
+        }
+    }
+
+    /* Estilos específicos para el menú del footer */
+    ul.menu {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap; // Ajustar en múltiples filas en pantallas pequeñas
+
+        li.menu-item {
+            margin: 0; // Eliminar márgenes conflictivos
+            padding: 0; // Asegurar que no haya relleno innecesario
+
+            a {
+                font-family:  "Libre Baskerville", serif !important;
+                font-weight: 500;
+                display: inline-block; // Asegurar una caja consistente para alineación
+                font-size: 0.9rem; // Tamaño de texto
+                color: var(--bs-light); // Color de texto
+                text-decoration: none; // Sin subrayado
+                padding: 0.5rem 1rem; // Espaciado interno uniforme
+                transition: color 0.3s ease; // Suavizar la transición en hover
+
+                &:hover {
+                    color: var(--bs-secondary); // Cambiar color en hover
+                }
+
+                &:focus {
+                    outline: 2px solid var(--bs-secondary);
+                    outline-offset: 4px;
+                }
+
+            }
+
+            // Ajustes para dispositivos pequeños
+            @media (max-width: 576px) {
+                width: 100%; // Elementos ocupan toda la fila
+                text-align: center; // Centrar texto
+
+                a {
+                    width: 100%; // Ancho completo para mejorar accesibilidad
+                    padding: 0.7rem 0; // Aumentar espaciado interno
+                }
+            }
+        }
+    }
+
+    span .bi{
+        background-color: var(--bs-gold);
+        color: var(--bs-white);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        transition:
+            background-color 0.3s ease,
+            transform 0.3s ease;
+
+        &:hover {
+            background-color: var(--bs-selector); /* Cambio de color al pasar el ratón */
+            transform: scale(1.1); /* Efecto de crecimiento suave */
+        }
+    }
+    // Ajustes para el copyright y logo
+    .row.d-flex.align-items-center {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 1rem;
+    }
+
+    // Ajustes de texto y logo
+    p {
+        margin-bottom: 0;
+        font-size: 0.9rem;
+        text-align: center;
+
+        @media (min-width: 768px) {
+            text-align: left;
+        }
+    }
+
+    .text-light {
+        color: var(--bs-light);
+    }
+
+    .text-end,
+    .text-md-end {
+        @media (max-width: 768px) {
+            text-align: center;
+            margin-top: 1rem;
+        }
+    }
+
+    img {
+        max-width: 150px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1); // Efecto de hover sobre el logo
+        }
+    }
+
+    // Centrar contenido en pantallas más pequeñas
+    @media (max-width: 768px) {
+        .row {
+            text-align: center;
+        }
+    }
+
+    // Responsive design para ajustar el espaciado y mantener la estructura en dispositivos pequeños
+    @media (max-width: 576px) {
+        .site-footer .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .widget {
+            margin-bottom: 1.2rem;
+        }
+    }
+}
+

@@ -1,0 +1,153 @@
+ 
+.calendar {
+    background-color: map-get($theme-variables, "dark-bg");
+    color: map-get($theme-variables, "text-light");
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 100%; // Asegurarse que se ajuste al contenedor
+    overflow: hidden;
+
+    .header {
+        color: map-get($theme-variables, "gold");
+        margin-bottom: 20px;
+        font-size: 1.5rem; // Tamaño de fuente aumentado para mejor visibilidad
+        text-align: center;
+    }
+
+    .days {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        margin-bottom: 10px;
+
+        .day_name {
+            flex: 1;
+            font-weight: 600;
+            color: map-get($theme-variables, "text-light");
+            font-size: 1rem;
+        }
+    }
+
+    .days-numbers {
+        display: flex;
+        flex-wrap: wrap;
+
+        .day_num {
+            width: calc(100% / 7); // Cada día ocupa 1/7 del ancho del contenedor
+            padding: 10px;
+            box-sizing: border-box;
+            color: map-get($theme-variables, "text-light");
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            text-align: center; // Alinear el contenido al centro
+
+            &.ignore {
+                color: map-get($theme-variables, "text-muted");
+            }
+
+            .date-number {
+                font-weight: bold;
+                font-size: 1.2rem; // Aumentar el tamaño de los números de los días
+            }
+
+            .event {
+                background-color: map-get($theme-variables, "gold");
+                color: map-get($theme-variables, "dark-bg");
+                padding: 5px;
+                border-radius: 5px;
+                margin-top: 10px;
+                font-size: 0.9rem;
+                text-align: center; // Centrar los textos de eventos
+            }
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1); // Efecto hover en los días
+                cursor: pointer;
+                transform: scale(1.05); // Aumentar el tamaño al hacer hover
+                transition: all 0.2s ease-in-out;
+            }
+        }
+    }
+
+    // Optimización para dispositivos móviles
+    @media only screen and (max-width: 768px) {
+        .header {
+            font-size: 1.2rem; // Tamaño de la fuente reducido en móviles
+        }
+
+        .days {
+            .day_name {
+                font-size: 0.9rem; // Reducir el tamaño de los nombres de los días
+            }
+        }
+
+        .days-numbers {
+            .day_num {
+                width: calc(100% / 4); // Mostrar 4 días por fila en móviles
+                font-size: 0.8rem; // Reducir tamaño de los números de los días
+                padding: 8px; // Reducir el padding
+            }
+
+            .event {
+                font-size: 0.8rem; // Reducir el tamaño del texto del evento
+                padding: 4px;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .days-numbers {
+            .day_num {
+                width: calc(100% / 3); // Mostrar 3 días por fila en pantallas muy pequeñas
+                font-size: 0.7rem; // Reducir el tamaño de los números de los días
+                padding: 6px; // Reducir más el padding
+            }
+        }
+    }
+}
+
+.modal-content {
+    background-color: map-get($theme-variables, "dark-bg"); 
+    color: map-get($theme-variables, "text-light");
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+
+    .modal-header {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        .modal-title {
+            color: map-get($theme-variables, "gold");
+        }
+    }
+
+    .modal-body {
+        p {
+            color: map-get($theme-variables, "text-light");
+            margin-bottom: 15px;
+        }
+    }
+
+    .modal-footer {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        .btn-secondary {
+            background-color: map-get($theme-variables, "light-bg");
+            color: map-get($theme-variables, "text-dark");
+
+            &:hover {
+                background-color: map-get($theme-variables, "dark-bg");
+                color: map-get($theme-variables, "text-light");
+            }
+        }
+
+        .btn-primary {
+            background-color: map-get($theme-variables, "gold");
+            color: map-get($theme-variables, "text-dark");
+
+            &:hover {
+                background-color: map-get($theme-variables, "light-gold");
+                color: map-get($theme-variables, "text-light");
+            }
+        }
+    }
+}
+

@@ -1,0 +1,107 @@
+// ========================================================
+// Variables Globales
+// ========================================================
+
+// Colores principales
+$primary: rgb(75, 0, 130);
+$primary-opacity-8: rgb(75, 0, 130, 0.8);
+$secondary: rgb(151, 5, 255);
+$secondary-opacity-5: rgb(151, 5, 255, 0.5);
+$gray: #D3D3D3;
+$white: #ffffff;
+$red: rgba(255, 0, 0, 0.8);
+$blue: rgba(26, 26, 112, 0.8);
+$selector: #daa520;
+$cyan: #87cefa;
+// Colores alineados con la identidad de Esuela Mistica
+$gold: #ffd700;
+$emerald: #50C878;
+$blue-dark: #001f3f;
+$dark-bg: #181818; 
+$text-light: #f8f9fa; 
+$text-muted: #b3b3b3;
+$spotify-green: #1DB954;
+$spotify-green-hover: #1AAE48;
+
+// Opacidades y variaciones
+$info-opacity-5: rgba(80, 200, 120, 0.5);
+
+// ========================================================
+// Tipografías
+// ========================================================
+$headings-font-family:  "Libre Baskerville", serif;
+$headings-font-weight: 700;
+$font-family-base: "Cormorant Garamond", serif;
+
+// ========================================================
+// Sombras
+// ========================================================
+$shadow-default: 0px 4px 15px rgba(0, 0, 0, 0.2);
+$shadow-hover: 0px 6px 20px rgba(0, 0, 0, 0.3);
+$shadow-light: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+// ========================================================
+// Breakpoints
+// ========================================================
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// ========================================================
+// Mapas de colores y utilidades
+// ========================================================
+
+// Mapa principal de colores para todo el tema
+$theme-colors: (
+    "primary": $primary,
+    "primary-opacity-8": $primary-opacity-8,
+    "secondary": $secondary,
+    "secondary-opacity-5": $secondary-opacity-5,
+    "selector": $selector,
+    "gold": $gold,
+    "cyan": $cyan,
+    "gray": $gray,
+    "white": $white,
+    "red": $red,
+    "blue": $blue,
+    "emerald": $emerald,
+    "blue-dark": $blue-dark,
+    "dark-bg": $dark-bg,
+    "info": $emerald,
+    "info-opacity-5": $info-opacity-5,
+    
+);
+
+$theme-shadows: (
+    "default": $shadow-default,
+    "hover": $shadow-hover,
+    "light": $shadow-light,
+);
+
+
+// Colores personalizados para íconos y otros componentes
+$custom-color: (
+    "icon-background": $red,
+    "icon-hover": rgb(255, 69, 0),
+    "text-light": $text-light,
+    "text-muted": $text-muted,
+
+
+);
+
+// Mapa final unificado
+$theme-variables: map-merge($theme-colors, $custom-color);
+$theme-variables: map-merge($theme-variables, $theme-shadows);
+
+// Utilidades (Ej. bordes redondeados)
+$utilities: (
+    "rounded": (
+        property: border-radius,
+        class: rounded,
+        values: (
+            null: 1rem, 
+            circle: 50%
+        )
+    )
+);
