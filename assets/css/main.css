@@ -21783,7 +21783,7 @@ textarea.form-control-lg {
   margin-bottom: 40px;
 }
 #about .card {
-  background-color: #6a5acd;
+  background-color: var(--bs-blue-dark);
   border-radius: 10px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

@@ -19,7 +19,7 @@
     }
 
     .card {
-        background-color: #6a5acd; // Azul púrpura
+        background-color: var(--bs-blue-dark); // Azul púrpura
         border-radius: 10px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
 
