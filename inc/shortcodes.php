@@ -422,3 +422,75 @@ function blog_calendar_events_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('ev_calendar_eventos', 'blog_calendar_events_shortcode');
+
+
+function blog_page_testimonials_shortcode() {
+    // Obtener los testimonios
+    $data = store_page_get_custom_post_type('testimonials', 10);
+
+    // Verificar si hay registros
+    if ($data->have_posts()) {
+        ?>
+        <section class="testimonials-section py-5" id="testimonios">
+            <div class="container">
+                <div class="title text-center mb-4">
+                    <h2 class="text-gold">Testimonios</h2>
+                </div>
+
+                <div id="testimonials-carousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <?php for ($i = 0; $i < $data->post_count; $i++) { ?>
+                            <button type="button" data-bs-target="#testimonials-carousel" data-bs-slide-to="<?php echo $i; ?>" <?php if ($i === 0) echo 'class="active"'; ?> aria-label="Slide <?php echo $i + 1; ?>"></button>
+                        <?php } ?>
+                    </div>
+
+                    <div class="carousel-inner">
+                        <?php while ($data->have_posts()) {
+                            $data->the_post(); ?>
+                            <div class="carousel-item <?php if ($data->current_post === 0) echo 'active'; ?>">
+                                <div class="card testimonial-card shadow-lg rounded">
+                                    <?php 
+                                    // Obtener el enlace del campo SCF
+                                    $testimonial_link = get_field('testimonial_link'); 
+                                    if (has_post_thumbnail()) : ?>
+                                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="card-img-top rounded-circle mx-auto mt-3" alt="<?php the_title(); ?>">
+                                    <?php endif; ?>
+                                    <div class="card-body text-center">
+                                        <?php if ($testimonial_link): ?>
+                                            <a href="<?php echo esc_url($testimonial_link); ?>" target="_blank" class="text-gold">
+                                                <h5 class="card-title"><?php the_title(); ?></h5>
+                                            </a>
+                                        <?php else: ?>
+                                            <h5 class="card-title"><?php the_title(); ?></h5>
+                                        <?php endif; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#testimonials-carousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#testimonials-carousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <?php
+        wp_reset_postdata();
+    } else {
+        ?>
+        <section class="testimonials-section py-5" id="testimonios">
+            <div class="container text-center">
+                <p class="text-muted">No hay testimonios disponibles.</p>
+            </div>
+        </section>
+        <?php
+    }
+}
+
+add_shortcode('ev_testimonios', 'blog_page_testimonials_shortcode');
