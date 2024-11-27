@@ -493,4 +493,4 @@ function blog_page_testimonials_shortcode() {
     }
 }
 
-add_shortcode('ev_testimonios', 'blog_page_testimonials_shortcode');
+add_shortcode('ev-testimonios', 'blog_page_testimonials_shortcode');
