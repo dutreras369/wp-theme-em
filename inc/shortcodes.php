@@ -423,10 +423,9 @@ function blog_calendar_events_shortcode() {
 }
 add_shortcode('ev_calendar_eventos', 'blog_calendar_events_shortcode');
 
-
 function blog_page_testimonials_shortcode() {
     // Obtener los testimonios
-    $data = store_page_get_custom_post_type('testimonials', 10);
+    $data = blog_get_custom_post_type('testimonials', 9);
 
     // Verificar si hay registros
     if ($data->have_posts()) {
@@ -439,34 +438,60 @@ function blog_page_testimonials_shortcode() {
 
                 <div id="testimonials-carousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
-                        <?php for ($i = 0; $i < $data->post_count; $i++) { ?>
+                        <?php 
+                        // Número de slides
+                        $total_slides = ceil($data->post_count / 3);
+                        for ($i = 0; $i < $total_slides; $i++) { 
+                        ?>
                             <button type="button" data-bs-target="#testimonials-carousel" data-bs-slide-to="<?php echo $i; ?>" <?php if ($i === 0) echo 'class="active"'; ?> aria-label="Slide <?php echo $i + 1; ?>"></button>
                         <?php } ?>
                     </div>
 
                     <div class="carousel-inner">
-                        <?php while ($data->have_posts()) {
-                            $data->the_post(); ?>
-                            <div class="carousel-item <?php if ($data->current_post === 0) echo 'active'; ?>">
-                                <div class="card testimonial-card shadow-lg rounded">
-                                    <?php 
-                                    // Obtener el enlace del campo SCF
-                                    $testimonial_link = get_field('testimonial_link'); 
-                                    if (has_post_thumbnail()) : ?>
-                                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="card-img-top rounded-circle mx-auto mt-3" alt="<?php the_title(); ?>">
-                                    <?php endif; ?>
-                                    <div class="card-body text-center">
-                                        <?php if ($testimonial_link): ?>
-                                            <a href="<?php echo esc_url($testimonial_link); ?>" target="_blank" class="text-gold">
-                                                <h5 class="card-title"><?php the_title(); ?></h5>
-                                            </a>
-                                        <?php else: ?>
-                                            <h5 class="card-title"><?php the_title(); ?></h5>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
+                        <?php
+                        $counter = 0;
+                        $slide_count = 0; // Contador para determinar cuántos testimonios en cada slide
+                        $testimonials = []; // Array para almacenar los testimonios de cada slide
+
+                        // Recopilar los testimonios
+                        while ($data->have_posts()) {
+                            $data->the_post();
+                            // Obtener el enlace de video embebido desde el metabox _testimonial_link
+                            $testimonial_link = get_post_meta(get_the_ID(), '_testimonial_link', true);
+                            $testimonials[] = $testimonial_link;
+                        }
+
+                        // Crear los slides de 3 testimonios
+                        foreach ($testimonials as $index => $testimonial_link) {
+                            if ($index % 3 === 0) {
+                                // Cada vez que el índice es divisible por 3, cerramos el slide anterior y comenzamos uno nuevo
+                                if ($index > 0) {
+                                    echo '</div>'; // Cerrar el slide anterior
+                                }
+                                echo '<div class="carousel-item ' . ($slide_count === 0 ? 'active' : '') . '">';
+                                $slide_count++;
+                            }
+                        ?>
+                            <div class="testimonial-video d-flex justify-content-center align-items-center">
+                                <?php
+                                // Verificar que haya un enlace de YouTube válido
+                                if (!empty($testimonial_link)) {
+                                    // Crear el código iframe para el video de YouTube
+                                    echo '<div class="video-container">
+                                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/' . esc_url($testimonial_link) . '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                          </div>';
+                                } else {
+                                    echo '<p class="text-muted">No hay video disponible.</p>';
+                                }
+                                ?>
                             </div>
-                        <?php } ?>
+                        <?php 
+                            // Cerrar el último slide después de terminar el loop si no es múltiplo de 3
+                            if (($index + 1) % 3 === 0 || $index + 1 === count($testimonials)) {
+                                echo '</div>';
+                            }
+                        }
+                        ?>
                     </div>
 
                     <button class="carousel-control-prev" type="button" data-bs-target="#testimonials-carousel" data-bs-slide="prev">
