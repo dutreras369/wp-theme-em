@@ -22224,7 +22224,7 @@ textarea.form-control-lg {
 }
 
 .testimonials-section {
-  background-color: var(bs-secondary-opacity-5);
+  background-color: var(--bs-secondary-opacity-5);
   padding: 80px 0;
   color: #fff;
 }
