@@ -21825,7 +21825,7 @@ textarea.form-control-lg {
   transform: translate(-50%, -50%) scale(1.05);
 }
 #about .modal-content {
-  background-color: #4b0082;
+  background-color: var(--bs-primary);
   color: #fff;
 }
 #about .modal-content .btn-gold {

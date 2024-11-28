@@ -67,7 +67,7 @@
     }
 
     .modal-content {
-        background-color: #4b0082; // Fondo del modal
+        background-color: var(--bs-primary); // Fondo del modal
         color: #fff;
 
         .btn-gold {
