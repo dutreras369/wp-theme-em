@@ -21765,7 +21765,7 @@ textarea.form-control-lg {
   }
 }
 #about {
-  background-color: #4b0082;
+  background-color: var(--bs-primary);
   padding: 80px 0;
 }
 #about h2, #about .h2 {
@@ -22124,7 +22124,7 @@ textarea.form-control-lg {
 }
 
 #servicios-programas {
-  background-color: #4b0082;
+  background-color: var(--bs-primary);
   color: #f5f5f5;
   padding: 60px 0;
   /* Encabezado de la sección */

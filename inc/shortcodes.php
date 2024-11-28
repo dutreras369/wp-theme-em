@@ -106,7 +106,7 @@ function ev_about_shortcode() {
                                 <div class="card h-100">
                                     <div class="card-body rounded">
                                         <div class="card-icon mb-3">
-                                            <i class="bi bi-moon-stars-fill display-4"></i>
+                                            <i class="bi bi-moon-stars-fill display-4 text-gold"></i>
                                         </div>
                                         <h5 class="card-title"><?php echo esc_html($card["title_$i"]); ?></h5>
                                         <p class="card-text"><?php echo esc_html($card["body_$i"]); ?></p>
