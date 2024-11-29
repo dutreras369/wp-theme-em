@@ -22251,7 +22251,7 @@ textarea.form-control-lg {
   padding: 20px;
 }
 .testimonials-section .carousel-item .video-container {
-  width: 30%;
+  width: 100%;
   margin: 15px;
   background-color: #34495e;
   border-radius: 10px;
