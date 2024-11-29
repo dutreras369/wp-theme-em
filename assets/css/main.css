@@ -10587,8 +10587,8 @@ p, a {
     font-size: 24px;
   }
 }
-.btn-spotify {
-  background-color: #1DB954;
+.btn-em-dark-blue {
+  background-color: var(--bs-primary);
   border: 2px solid transparent;
   color: #ffffff;
   font-weight: bold;
@@ -10600,40 +10600,40 @@ p, a {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   font-size: 16px;
 }
-.btn-spotify i {
+.btn-em-dark-blue i {
   font-size: 24px;
   margin-left: 10px;
   transition: all 0.3s ease;
 }
-.btn-spotify:hover {
-  background-color: #1AAE48;
+.btn-em-dark-blue:hover {
+  background-color: var(--bs-blue-dark);
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
   transform: scale(1.07);
   border-color: #ffffff;
 }
-.btn-spotify:hover i {
+.btn-em-dark-blue:hover i {
   transform: rotate(10deg);
 }
-.btn-spotify:active {
+.btn-em-dark-blue:active {
   transform: scale(0.98);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 576px) {
-  .btn-spotify {
+  .btn-em-dark-blue {
     font-size: 14px;
     padding: 10px 20px;
   }
-  .btn-spotify i {
+  .btn-em-dark-blue i {
     font-size: 20px;
     margin-left: 8px;
   }
 }
 @media (max-width: 768px) {
-  .btn-spotify {
+  .btn-em-dark-blue {
     font-size: 15px;
     padding: 10px 25px;
   }
-  .btn-spotify i {
+  .btn-em-dark-blue i {
     font-size: 22px;
     margin-left: 8px;
   }
@@ -22015,7 +22015,7 @@ textarea.form-control-lg {
   color: #fff;
   text-align: center;
 }
-#hero .carousel-inner .carousel-item .carousel-caption .btn-spotify {
+#hero .carousel-inner .carousel-item .carousel-caption .btn-em-gold {
   background-color: #DAA520;
   color: #fff;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -22023,10 +22023,10 @@ textarea.form-control-lg {
   border-radius: 5px;
   padding: 10px 20px;
 }
-#hero .carousel-inner .carousel-item .carousel-caption .btn-spotify:hover {
+#hero .carousel-inner .carousel-item .carousel-caption .btn-em-gold:hover {
   background-color: #FFD700;
 }
-#hero .carousel-inner .carousel-item .carousel-caption .btn-spotify:active {
+#hero .carousel-inner .carousel-item .carousel-caption .btn-em-gold:active {
   background-color: #FF0000;
   transform: scale(0.95);
 }
