@@ -449,48 +449,41 @@ function blog_page_testimonials_shortcode() {
 
                     <div class="carousel-inner">
                         <?php
-                        $counter = 0;
-                        $slide_count = 0; // Contador para determinar cuántos testimonios en cada slide
-                        $testimonials = []; // Array para almacenar los testimonios de cada slide
+                        $counter = 0; // Contador para las columnas
+                        $slide_count = 0; // Contador para los slides
 
-                        // Recopilar los testimonios
+                        // Abrir el primer slide
+                        echo '<div class="carousel-item active"><div class="row">';
+
+                        // Recorrer los testimonios
                         while ($data->have_posts()) {
                             $data->the_post();
-                            // Obtener el enlace de video embebido desde el metabox _testimonial_link
                             $testimonial_link = get_post_meta(get_the_ID(), '_testimonial_link', true);
-                            $testimonials[] = $testimonial_link;
+
+                            // Crear una columna para cada testimonio
+                            ?>
+                            <div class="col-md-4 mb-4">
+                                <div class="video-container">
+                                    <?php if (!empty($testimonial_link)): ?>
+                                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/<?php echo esc_attr($testimonial_link); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <?php else: ?>
+                                        <p class="text-muted">No hay video disponible.</p>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <?php
+
+                            $counter++;
+
+                            // Si ya hay 3 elementos en la fila, cerrar el slide y abrir uno nuevo
+                            if ($counter % 3 === 0 && $data->current_post + 1 < $data->post_count) {
+                                echo '</div></div>'; // Cerrar fila y slide
+                                echo '<div class="carousel-item"><div class="row">'; // Abrir nuevo slide
+                            }
                         }
 
-                        // Crear los slides de 3 testimonios
-                        foreach ($testimonials as $index => $testimonial_link) {
-                            if ($index % 3 === 0) {
-                                // Cada vez que el índice es divisible por 3, cerramos el slide anterior y comenzamos uno nuevo
-                                if ($index > 0) {
-                                    echo '</div>'; // Cerrar el slide anterior
-                                }
-                                echo '<div class="carousel-item ' . ($slide_count === 0 ? 'active' : '') . '">';
-                                $slide_count++;
-                            }
-                        ?>
-                            <div class="testimonial-video d-flex justify-content-center align-items-center">
-                                <?php
-                                // Verificar que haya un enlace de YouTube válido
-                                if (!empty($testimonial_link)) {
-                                    // Crear el código iframe para el video de YouTube ?>
-                                    <div class="video-container">
-                                        <iframe width="100%" height="315" src="<?php echo esc_url($testimonial_link);?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                    </div><?php
-                                } else {
-                                    echo '<p class="text-muted">No hay video disponible.</p>';
-                                }
-                                ?>
-                            </div>
-                        <?php 
-                            // Cerrar el último slide después de terminar el loop si no es múltiplo de 3
-                            if (($index + 1) % 3 === 0 || $index + 1 === count($testimonials)) {
-                                echo '</div>';
-                            }
-                        }
+                        // Cerrar la fila y el slide final
+                        echo '</div></div>';
                         ?>
                     </div>
 
