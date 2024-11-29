@@ -425,7 +425,7 @@ add_shortcode('ev_calendar_eventos', 'blog_calendar_events_shortcode');
 
 function blog_page_testimonials_shortcode() {
     // Obtener los testimonios
-    $data = blog_get_custom_post_type('testimonial', 9);
+    $data = blog_get_custom_post_type('testimonials', 9);
 
     // Verificar si hay registros
     if ($data->have_posts()) {
@@ -476,10 +476,10 @@ function blog_page_testimonials_shortcode() {
                                 <?php
                                 // Verificar que haya un enlace de YouTube válido
                                 if (!empty($testimonial_link)) {
-                                    // Crear el código iframe para el video de YouTube
-                                    echo '<div class="video-container">
-                                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/' . esc_url($testimonial_link) . '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                          </div>';
+                                    // Crear el código iframe para el video de YouTube ?>
+                                    <div class="video-container">
+                                        <iframe width="100%" height="315" src="<?php echo esc_url($testimonial_link);?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div><?php
                                 } else {
                                     echo '<p class="text-muted">No hay video disponible.</p>';
                                 }
