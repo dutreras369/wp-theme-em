@@ -42,9 +42,9 @@
                                             <!-- Descripción interactiva que invita a la introspección -->
                                             <p class="lead text-white"><?php echo esc_html($body); ?></p>
                                             <!-- Botón hacia Spotify con efecto visual -->
-                                            <a href="https://open.spotify.com/artist/TU_SPOTIFY_URL" target="_blank" class="btn btn-spotify btn-lg shadow-lg">
-                                                Agenda <i class="bi bi-calendar rounded-circle"></i>
-                                            </a>
+                                                <button type="button" class="btn btn-spotify btn-lg shadow-lg" data-bs-toggle="modal" data-bs-target="#subscribeModal">
+                                                    Suscribete <i class="bi bi-person-hearts me-2 text-white"></i> 
+                                                </button>
                                         </div>
                                     </div>
                                 </div>
@@ -90,9 +90,9 @@ function ev_about_shortcode() {
                 </p>
 
                 <!-- Botón de suscripción -->
-                <button type="button" class="btn btn-lg p-3 btn-gold" data-bs-toggle="modal" data-bs-target="#subscribeModal">
-                    Agenda <i class="bi bi-calendar me-2 text-white"></i> 
-                </button>
+                <a href="https://calendly.com/momistica/asesoria-alquimiza" target="_blank" class="btn btn-spotify btn-lg shadow-lg">
+                    Agenda <i class="bi bi-calendar rounded-circle"></i>
+                </a>
             </div>
 
             <div class="container py-4">

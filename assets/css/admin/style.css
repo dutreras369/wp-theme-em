@@ -1,0 +1,15 @@
+/* Estilo para el checkbox y label de "Tiene una empresa constituida" */
+.form-group.form-check {
+    display: flex;
+    align-items: center;
+}
+
+/* Margen izquierdo para la etiqueta del checkbox */
+.form-group.form-check .form-check-label {
+    margin-left: 8px;
+}
+
+/* Estilo para ocultar el campo rut_empresa inicialmente */
+#rut_empresa_field {
+    display: none;
+}
