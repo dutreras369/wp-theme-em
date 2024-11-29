@@ -135,6 +135,7 @@ p, a {
 body {
     font-family: 'Cormorant Garamond', serif;
     overflow-x: hidden;
+    background-color: black !important;
 }
 
 /* Estilos adicionales para los enlaces (quitar marcas de haber sido utilizado) */
@@ -147,10 +148,6 @@ a {
         outline: none; /* Quitar el contorno de enfoque */
         border-bottom: 2px solid var(--bs-selector); /* Agregar un borde inferior en el enfoque */
     }
-}
-
-.site-main{
-    background-color: black;
 }
 
                                                                                                                                         
