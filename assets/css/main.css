@@ -10664,6 +10664,10 @@ a:focus {
   border-bottom: 2px solid var(--bs-selector); /* Agregar un borde inferior en el enfoque */
 }
 
+.site-main {
+  background-color: black;
+}
+
 /*!
  * Bootstrap v5.0.2 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
