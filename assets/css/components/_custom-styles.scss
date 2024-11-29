@@ -60,8 +60,8 @@ p, a {
     }
 }
 
-.btn-em-dark-blue {
-    background-color: var(--bs-primary);
+.btn-em-red {
+    background-color: var(--bs-blue-dark);
     border: 2px solid transparent;
     color: $white;
     font-weight: bold;
@@ -82,8 +82,9 @@ p, a {
 
     // Efecto hover
     &:hover {
-        background-color: var(--bs-blue-dark);
+        background-color: var(--bs-red);
         box-shadow: $shadow-hover; // Sombra más grande en hover
+        color: $white;
         transform: scale(1.07); // Aumento más notable de tamaño
         border-color: $white; // Borde blanco en hover
         i {

@@ -10587,8 +10587,8 @@ p, a {
     font-size: 24px;
   }
 }
-.btn-em-dark-blue {
-  background-color: var(--bs-primary);
+.btn-em-red {
+  background-color: var(--bs-blue-dark);
   border: 2px solid transparent;
   color: #ffffff;
   font-weight: bold;
@@ -10600,40 +10600,41 @@ p, a {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
   font-size: 16px;
 }
-.btn-em-dark-blue i {
+.btn-em-red i {
   font-size: 24px;
   margin-left: 10px;
   transition: all 0.3s ease;
 }
-.btn-em-dark-blue:hover {
-  background-color: var(--bs-blue-dark);
+.btn-em-red:hover {
+  background-color: var(--bs-red);
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
   transform: scale(1.07);
   border-color: #ffffff;
 }
-.btn-em-dark-blue:hover i {
+.btn-em-red:hover i {
   transform: rotate(10deg);
 }
-.btn-em-dark-blue:active {
+.btn-em-red:active {
   transform: scale(0.98);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 576px) {
-  .btn-em-dark-blue {
+  .btn-em-red {
     font-size: 14px;
     padding: 10px 20px;
   }
-  .btn-em-dark-blue i {
+  .btn-em-red i {
     font-size: 20px;
     margin-left: 8px;
   }
 }
 @media (max-width: 768px) {
-  .btn-em-dark-blue {
+  .btn-em-red {
     font-size: 15px;
     padding: 10px 25px;
   }
-  .btn-em-dark-blue i {
+  .btn-em-red i {
     font-size: 22px;
     margin-left: 8px;
   }
