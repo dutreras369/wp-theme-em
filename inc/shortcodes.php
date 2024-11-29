@@ -465,7 +465,7 @@ function blog_page_testimonials_shortcode() {
                             <div class="col-md-4 mb-4">
                                 <div class="video-container">
                                     <?php if (!empty($testimonial_link)): ?>
-                                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/<?php echo esc_attr($testimonial_link); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <iframe width="100%" height="200" src="<?php echo esc_attr($testimonial_link); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     <?php else: ?>
                                         <p class="text-muted">No hay video disponible.</p>
                                     <?php endif; ?>
