@@ -422,12 +422,10 @@ function blog_calendar_events_shortcode() {
     return ob_get_clean();
 }
 add_shortcode('ev_calendar_eventos', 'blog_calendar_events_shortcode');
-
 function blog_page_testimonials_shortcode() {
     // Obtener los testimonios
     $data = blog_get_custom_post_type('testimonial', 9);
 
-    // Verificar si hay registros
     if ($data->have_posts()) {
         ?>
         <section class="testimonials-section py-5" id="testimonios">
@@ -439,7 +437,6 @@ function blog_page_testimonials_shortcode() {
                 <div id="testimonials-carousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
                         <?php 
-                        // Número de slides
                         $total_slides = ceil($data->post_count / 3);
                         for ($i = 0; $i < $total_slides; $i++) { 
                         ?>
@@ -449,18 +446,14 @@ function blog_page_testimonials_shortcode() {
 
                     <div class="carousel-inner">
                         <?php
-                        $counter = 0; // Contador para las columnas
-                        $slide_count = 0; // Contador para los slides
+                        $counter = 0;
 
-                        // Abrir el primer slide
                         echo '<div class="carousel-item active"><div class="row">';
 
-                        // Recorrer los testimonios
                         while ($data->have_posts()) {
                             $data->the_post();
                             $testimonial_link = get_post_meta(get_the_ID(), '_testimonial_link', true);
 
-                            // Crear una columna para cada testimonio
                             ?>
                             <div class="col-md-4 mb-4">
                                 <div class="video-container">
@@ -475,14 +468,12 @@ function blog_page_testimonials_shortcode() {
 
                             $counter++;
 
-                            // Si ya hay 3 elementos en la fila, cerrar el slide y abrir uno nuevo
                             if ($counter % 3 === 0 && $data->current_post + 1 < $data->post_count) {
-                                echo '</div></div>'; // Cerrar fila y slide
-                                echo '<div class="carousel-item"><div class="row">'; // Abrir nuevo slide
+                                echo '</div></div>';
+                                echo '<div class="carousel-item"><div class="row">';
                             }
                         }
 
-                        // Cerrar la fila y el slide final
                         echo '</div></div>';
                         ?>
                     </div>

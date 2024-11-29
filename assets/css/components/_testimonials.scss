@@ -1,5 +1,5 @@
 .testimonials-section {
-    background-color: var(--bs-secondary-opacity-5); // Fondo oscuro
+    background-color: var(--bs-secondary-opacity-5); // Fondo suave y místico
     padding: 80px 0;
     color: #fff;
 
@@ -20,7 +20,7 @@
         }
 
         .video-container {
-            background-color: #34495e;
+            background-color: var(--bs-primary-opacity-8); // Fondo adaptado al tema
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             overflow: hidden;

@@ -10653,7 +10653,7 @@ p, a {
 body {
   font-family: "Cormorant Garamond", serif;
   overflow-x: hidden;
-  background-color: var(--bs-blue-dark);
+  background-color: #001f3f !important;
 }
 
 /* Estilos adicionales para los enlaces (quitar marcas de haber sido utilizado) */
@@ -22238,30 +22238,18 @@ textarea.form-control-lg {
   font-family: "Cinzel", serif;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
 }
-.testimonials-section .carousel-item {
-  display: flex;
+.testimonials-section .carousel-item .row {
   justify-content: center;
-  align-items: center;
-  min-height: 500px;
-}
-.testimonials-section .carousel-item .testimonial-video {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  padding: 20px;
 }
 .testimonials-section .carousel-item .video-container {
-  width: 100%;
-  margin: 15px;
-  background-color: #34495e;
+  background-color: var(--bs-primary-opacity-8);
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
 .testimonials-section .carousel-item .video-container iframe {
   width: 100%;
-  height: 100%;
+  height: 200px;
   border: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 10px;
