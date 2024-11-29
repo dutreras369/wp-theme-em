@@ -425,7 +425,7 @@ add_shortcode('ev_calendar_eventos', 'blog_calendar_events_shortcode');
 
 function blog_page_testimonials_shortcode() {
     // Obtener los testimonios
-    $data = blog_get_custom_post_type('testimonials', 9);
+    $data = blog_get_custom_post_type('testimonial', 9);
 
     // Verificar si hay registros
     if ($data->have_posts()) {
