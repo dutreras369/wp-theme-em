@@ -10653,7 +10653,7 @@ p, a {
 body {
   font-family: "Cormorant Garamond", serif;
   overflow-x: hidden;
-  background-color: black !important;
+  background-color: var(--bs-blue-dark);
 }
 
 /* Estilos adicionales para los enlaces (quitar marcas de haber sido utilizado) */
