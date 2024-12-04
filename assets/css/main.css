@@ -21702,6 +21702,7 @@ textarea.form-control-lg {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  background-color: var(--bs-gray);
 }
 .blog-posts .card {
   background-color: #fff;
