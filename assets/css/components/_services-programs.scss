@@ -24,14 +24,14 @@
 
     /* Estilo del Carousel */
     .carousel {
-        
-        .card{
-            background-color: var(--bs-primary);
-        }
-
         .carousel-item {
+
             transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; // Transiciones suaves
             position: relative;
+
+            .card{
+                background-color: var(--bs-primary);
+            }
 
             img {
                 border-radius: 15px; // Bordes redondeados para las imágenes
