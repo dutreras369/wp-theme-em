@@ -91,7 +91,7 @@ function ev_about_shortcode() {
 
                 <!-- Botón de suscripción -->
                 <a href="https://calendly.com/momistica/asesoria-alquimiza" target="_blank" class="btn btn-em-gold btn-lg shadow-lg">
-                    Agenda <i class="bi bi-calendar rounded-circle"></i>
+                    Agenda <i class="bi bi-calendar rounded-circle d-none"></i>
                 </a>
             </div>
 
