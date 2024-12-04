@@ -10668,10 +10668,20 @@ p, a {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
 }
 
+/* Text family */
 body {
   font-family: "Cormorant Garamond", serif;
   overflow-x: hidden;
-  background-color: #001f3f !important;
+}
+
+/* Fondo para la página principal */
+body.home {
+  background-color: #001f3f; /* Azul oscurto */
+}
+
+/* Fondo blanco para el resto de las páginas (opcional si ya es blanco por defecto) */
+body {
+  background-color: #ffffff; /* Blanco */
 }
 
 /* Estilos adicionales para los enlaces (quitar marcas de haber sido utilizado) */
@@ -22033,22 +22043,6 @@ textarea.form-control-lg {
 #hero .carousel-inner .carousel-item .carousel-caption h5, #hero .carousel-inner .carousel-item .carousel-caption .h5, #hero .carousel-inner .carousel-item .carousel-caption p {
   color: #fff;
   text-align: center;
-}
-#hero .carousel-inner .carousel-item .carousel-caption .btn-em-gold {
-  background-color: #DAA520;
-  color: #fff;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-}
-#hero .carousel-inner .carousel-item .carousel-caption .btn-em-gold:hover {
-  background-color: var(--bs-cyan);
-  color: #fff;
-}
-#hero .carousel-inner .carousel-item .carousel-caption .btn-em-gold:active {
-  background-color: var(--bs-selector);
-  transform: scale(0.9);
 }
 @media (max-width: 768px) {
   #hero .carousel-item img {

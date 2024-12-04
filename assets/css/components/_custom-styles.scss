@@ -152,10 +152,21 @@ p, a {
     }
 }
 
+/* Text family */
 body {
     font-family: 'Cormorant Garamond', serif;
     overflow-x: hidden;
-    background-color: #001f3f !important;
+}
+
+
+/* Fondo para la página principal */
+body.home {
+    background-color: #001f3f; /* Azul oscurto */
+}
+
+/* Fondo blanco para el resto de las páginas (opcional si ya es blanco por defecto) */
+body {
+    background-color: #ffffff; /* Blanco */
 }
 
 /* Estilos adicionales para los enlaces (quitar marcas de haber sido utilizado) */
