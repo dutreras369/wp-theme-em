@@ -10640,6 +10640,23 @@ p, a {
   }
 }
 
+.btn-em-gold {
+  background-color: #DAA520;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+.btn-em-gold:hover {
+  background-color: var(--bs-cyan);
+  color: #fff;
+}
+.btn-em-gold:active {
+  background-color: var(--bs-selector);
+  transform: scale(0.9);
+}
+
 .shadow-custom {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.05);

@@ -65,26 +65,6 @@
           color: #fff;
           text-align: center;
         }
-
-        // Botón de Spotify con efectos de hover y active
-        .btn-em-gold {
-          background-color: #DAA520;
-          color: #fff;
-          transition: background-color 0.3s ease, transform 0.2s ease;
-          border: none;
-          border-radius: 5px;
-          padding: 10px 20px;
-
-          &:hover {
-            background-color: var(--bs-cyan);
-            color: #fff;
-          }
-
-          &:active {
-            background-color: var(--bs-selector);
-            transform: scale(0.90);
-          }
-        }
       }
     }
   }
