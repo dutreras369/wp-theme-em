@@ -25,8 +25,8 @@ get_header();
     </section>
 
     <!-- Blog Posts Section -->
-    <section class="blog-posts my-5">
-        <div class="container">
+    <section class="blog-posts">
+        <div class="container-fluid p-5">
             <div class="row">
                 <!-- Sidebar -->
                 <div class="col-md-4">
