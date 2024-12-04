@@ -8,6 +8,7 @@ $primary-opacity-8: rgb(72, 61, 139, 0.8);
 $secondary: rgb(75, 0, 130);
 $secondary-opacity-5: rgb(75, 0, 130, 0.5);
 $gray: #D3D3D3;
+$gray-light: #f5f5f5;
 $white: #ffffff;
 $red: rgba(255, 0, 0, 0.8);
 $blue: rgba(26, 26, 112, 0.8);
@@ -62,6 +63,7 @@ $theme-colors: (
     "gold": $gold,
     "cyan": $cyan,
     "gray": $gray,
+    "gray-light": $gray-light,
     "white": $white,
     "red": $red,
     "blue": $blue,

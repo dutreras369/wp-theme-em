@@ -120,8 +120,8 @@ p, a {
 }
 
 .btn-em-gold {
-    background-color: #DAA520;
-    color: #fff;
+    background-color: --bs-selector !important;
+    color: #fff !important;
     transition: background-color 0.3s ease, transform 0.2s ease;
     border: none;
     border-radius: 5px;
@@ -133,7 +133,7 @@ p, a {
     }
 
     &:active {
-      background-color: var(--bs-selector);
+      background-color: #DAA520;
       transform: scale(0.90);
     }
   }

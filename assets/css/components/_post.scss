@@ -1,32 +1,121 @@
-
 /* Post */
 
-// Estilos para el contenido del post
+// Estilos para el título del post
 .entry-title {
-    font-size: 2.5rem;
+    font-size: 2.8rem; // Tamaño más prominente para destacar el título
     color: $primary;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Cinzel', serif; // Tipografía mística
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); // Sombra elegante
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $info; // Cambia el color al pasar el ratón
+    }
 }
 
+// Estilos para el contenido del post
 .entry-content {
     font-size: 1.2rem;
-    line-height: 1.6;
+    line-height: 1.8; // Aumentar la separación para facilitar la lectura
     color: #333;
+    margin-bottom: 2rem;
+
+    p {
+        margin-bottom: 1.2rem;
+    }
+
+    blockquote {
+        font-style: italic;
+        margin: 1.5rem 0;
+        padding: 1rem;
+        border-left: 4px solid $primary;
+        background-color: $gray-light; // Fondo sutil para resaltar las citas
+        color: $secondary;
+    }
+
+    img {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        margin: 1.5rem 0;
+    }
+
+    a {
+        color: $info;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $primary; // Cambia el color al pasar el ratón
+        }
+    }
 }
 
+// Estilos para el footer del post
 .entry-footer {
     margin-top: 2rem;
     border-top: 1px solid $gray;
     padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .tags {
+        font-size: 0.9rem;
+        color: $info;
+
+        a {
+            color: $primary;
+            margin-right: 0.5rem;
+            padding: 0.2rem 0.5rem;
+            background-color: $gray-light;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+            &:hover {
+                background-color: $primary;
+                color: #fff;
+            }
+        }
+    }
+
+    .share-icons {
+        display: flex;
+        gap: 1rem;
+
+        a {
+            color: $info;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+
+            &:hover {
+                color: $primary;
+                transform: scale(1.2); // Aumenta ligeramente el tamaño al pasar el ratón
+            }
+        }
+    }
 }
 
+// Navegación entre posts
 .post-navigation {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+
     .nav-subtitle {
         font-weight: bold;
         color: $info;
+        font-size: 0.9rem;
     }
 
     .nav-title {
         color: $primary;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $info;
+        }
     }
 }
