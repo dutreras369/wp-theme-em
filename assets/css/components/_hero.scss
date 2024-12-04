@@ -76,12 +76,13 @@
           padding: 10px 20px;
 
           &:hover {
-            background-color: #FFD700;
+            background-color: var(--bs-cyan);
+            color: #fff;
           }
 
           &:active {
-            background-color: #FF0000;
-            transform: scale(0.95);
+            background-color: var(--bs-selector);
+            transform: scale(0.90);
           }
         }
       }

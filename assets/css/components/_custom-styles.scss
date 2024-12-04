@@ -82,7 +82,7 @@ p, a {
 
     // Efecto hover
     &:hover {
-        background-color: var(--bs-red);
+        background-color: var(--bs-cyan);
         box-shadow: $shadow-hover; // Sombra más grande en hover
         color: $white;
         transform: scale(1.07); // Aumento más notable de tamaño

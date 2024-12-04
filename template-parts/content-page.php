@@ -8,11 +8,11 @@
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> class="bg-white">
 	<header class="entry-header my-4">
 		<?php 
 			if(!is_front_page()){
-				the_title( '<h1 class="entry-title h1_tsn text-center">', '</h1>' );
+				the_title( '<h1 class="entry-title h1_tsn text-center tex-gold">', '</h1>' );
 			}
 		?>
 	</header><!-- .entry-header -->

@@ -10606,7 +10606,7 @@ p, a {
   transition: all 0.3s ease;
 }
 .btn-em-dark-blue:hover {
-  background-color: var(--bs-red);
+  background-color: var(--bs-cyan);
   box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
   color: #ffffff;
   transform: scale(1.07);
@@ -22025,11 +22025,12 @@ textarea.form-control-lg {
   padding: 10px 20px;
 }
 #hero .carousel-inner .carousel-item .carousel-caption .btn-em-gold:hover {
-  background-color: #FFD700;
+  background-color: var(--bs-cyan);
+  color: #fff;
 }
 #hero .carousel-inner .carousel-item .carousel-caption .btn-em-gold:active {
-  background-color: #FF0000;
-  transform: scale(0.95);
+  background-color: var(--bs-selector);
+  transform: scale(0.9);
 }
 @media (max-width: 768px) {
   #hero .carousel-item img {
@@ -22226,7 +22227,7 @@ textarea.form-control-lg {
 }
 
 .testimonials-section {
-  background-color: var(--bs-secondary-opacity-5);
+  background-color: var(--bs-blue-dark);
   padding: 80px 0;
   color: #fff;
 }
