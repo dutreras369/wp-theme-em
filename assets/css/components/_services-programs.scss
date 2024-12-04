@@ -24,7 +24,11 @@
 
     /* Estilo del Carousel */
     .carousel {
-        background-color: var(--bs-primary);
+        
+        .card{
+            background-color: var(--bs-primary);
+        }
+
         .carousel-item {
             transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; // Transiciones suaves
             position: relative;
