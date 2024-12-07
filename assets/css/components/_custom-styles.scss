@@ -128,7 +128,7 @@ p, a {
     padding: 10px 20px;
 
     &:hover {
-      background-color: var(--bs-cyan);
+      background-color: var(--bs-cyan) !important;
       color: #fff;
     }
 
@@ -177,7 +177,6 @@ a {
 
     &:focus {
         outline: none; /* Quitar el contorno de enfoque */
-        border-bottom: 2px solid var(--bs-selector); /* Agregar un borde inferior en el enfoque */
     }
 }
 

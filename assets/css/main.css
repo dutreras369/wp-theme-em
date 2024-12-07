@@ -10788,7 +10788,6 @@ a:visited {
 }
 a:focus {
   outline: none; /* Quitar el contorno de enfoque */
-  border-bottom: 2px solid var(--bs-selector); /* Agregar un borde inferior en el enfoque */
 }
 
 /*!
