@@ -10747,7 +10747,7 @@ p, a {
   padding: 10px 20px;
 }
 .btn-em-gold:hover {
-  background-color: var(--bs-cyan);
+  background-color: var(--bs-cyan) !important;
   color: #fff;
 }
 .btn-em-gold:active {
@@ -10783,10 +10783,13 @@ body {
 }
 
 /* Estilos adicionales para los enlaces (quitar marcas de haber sido utilizado) */
-a:visited {
+.entry-content a {
+  text-decoration: none !important;
+}
+.entry-content a:visited {
   color: var(--bs-white); /* Mantener el color blanco para los links visitados */
 }
-a:focus {
+.entry-content a:focus {
   outline: none; /* Quitar el contorno de enfoque */
 }
 

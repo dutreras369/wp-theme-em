@@ -170,7 +170,9 @@ body {
 }
 
 /* Estilos adicionales para los enlaces (quitar marcas de haber sido utilizado) */
-a {
+.entry-content a {
+    text-decoration: none !important; // Quitar subrayado
+
     &:visited {
         color: var(--bs-white); /* Mantener el color blanco para los links visitados */
     }
