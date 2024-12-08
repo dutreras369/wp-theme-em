@@ -22577,20 +22577,6 @@ textarea.form-control-lg {
   background-color: var(--bs-secondary-opacity-5);
   padding: 80px 0;
 }
-.community-membership .title {
-  margin-bottom: 30px;
-}
-.community-membership .title h2, .community-membership .title .h2 {
-  font-size: 2.5rem;
-  color: #FFD700;
-  font-family: "Cinzel", serif;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-}
-.community-membership .title p {
-  font-size: 1.2rem;
-  color: #888;
-  margin-top: 10px;
-}
 .community-membership .gallery-item {
   position: relative;
   overflow: hidden;
@@ -22600,12 +22586,16 @@ textarea.form-control-lg {
 }
 .community-membership .gallery-item:hover {
   transform: scale(1.05);
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.8);
 }
 .community-membership .gallery-item img {
   width: 100%;
   height: auto;
   border-radius: 10px;
+  transition: filter 0.3s ease;
+}
+.community-membership .gallery-item img:hover {
+  filter: brightness(1.2);
 }
 .community-membership .gallery-item .gallery-info {
   margin-top: 15px;
