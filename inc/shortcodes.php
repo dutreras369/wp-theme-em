@@ -259,113 +259,77 @@ function ev_servicios_shortcode()
 }
 add_shortcode('ev-servicios', 'ev_servicios_shortcode');
 
+// Función para crear el shortcode de comunidad y membresia
+function community_membership_gallery_shortcode() {
+    // Obtener datos de la página con el slug 'membresia-comunidad'
+    $data = blog_get_page(array('membresia-comunidad'));
 
+    if ($data->have_posts()) {
+        ob_start(); // Captura de salida
 
-// Shortcode para la sección de música
-function ev_perfil_shortcode() {
-    ob_start();
-    
-    // Obtener los valores de ACF
-    $links = get_field('embebidos'); 
+        while ($data->have_posts()) {
+            $data->the_post();
 
-    $spotify_link = $links['spotify_link']; // Asignado a la página de opciones o página específica
-    $youtube_link = $links['youtube_link'];
-    
-    // Comprobar si los enlaces están disponibles ?>
-    
-        <section id="music-section" class="py-5 bg-light text-dark">
-            <div class="container">
-                <div class="row justify-content-center mb-4">
-                    <div class="col-md-8 text-center">
-                        <h2 class="display-6 text-primary mb-3">¡Escucha y Descubre!</h2>
-                        <p class="lead text-muted">Explora esta música en Spotify y nuestros videos en YouTube</p>
+            // Obtener campos personalizados de la página
+            $maureen_image = get_field('maureen_image'); // Imagen de Maureen
+            $maureen_thought = get_field('maureen_thought'); // Pensamiento de Maureen
+            $gallery_items = get_field('community_gallery'); // Galería de imágenes
+
+            ?>
+            <section class="community-membership py-5" id="community">
+                <div class="container">
+                    <!-- Sección de Maureen -->
+                    <div class="row align-items-center mb-5">
+                        <div class="col-md-4 text-center">
+                            <?php if ($maureen_image): ?>
+                                <img src="<?php echo esc_url($maureen_image['url']); ?>" alt="<?php echo esc_attr($maureen_image['alt']); ?>" class="img-fluid rounded-circle maureen-photo">
+                            <?php endif; ?>
+                        </div>
+                        <div class="col-md-8">
+                            <blockquote class="maureen-thought text-center text-md-start">
+                                <p class="fs-4 text-muted"><?php echo esc_html($maureen_thought); ?></p>
+                            </blockquote>
+                        </div>
                     </div>
-                </div>
 
-                <div class="row g-4"> <!-- Usar g-4 para espacio entre columnas -->
-                    <?php if ($spotify_link): ?>
-                        <div class="col-md-6">
-                            <div class="ratio ratio-16x9 shadow-lg rounded"> <!-- Reemplazar embed-responsive con ratio -->
-                                <iframe class="rounded" src="<?php echo esc_url($spotify_link); ?>" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                            </div>
+                    <!-- Galería -->
+                    <?php if ($gallery_items): ?>
+                        <div class="title text-center mb-4">
+                            <h2 class="text-gold">Comunidad y Membresía</h2>
+                            <p class="text-muted">Explora los beneficios de unirte a nuestra comunidad y disfruta de contenido exclusivo.</p>
+                        </div>
+                        <div class="row g-4">
+                            <?php foreach ($gallery_items as $item): 
+                                $image = $item['image']; // Imagen de la galería
+                                $title = $item['title']; // Título del beneficio
+                                $description = $item['description']; // Descripción breve
+                                ?>
+                                <div class="col-md-4">
+                                    <div class="gallery-item shadow-sm">
+                                        <a href="<?php echo esc_url($image['url']); ?>" data-lightbox="community-gallery" data-title="<?php echo esc_attr($title); ?>">
+                                            <img src="<?php echo esc_url($image['sizes']['medium']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="img-fluid rounded">
+                                        </a>
+                                        <div class="gallery-info text-center mt-3">
+                                            <h5 class="text-gold"><?php echo esc_html($title); ?></h5>
+                                            <p class="text-muted"><?php echo esc_html($description); ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     <?php endif; ?>
-
-                    <?php if ($youtube_link): ?>
-                        <div class="col-md-6">
-                            <div class="ratio ratio-16x9 shadow-lg rounded">
-                                <iframe class="rounded" src="<?php echo esc_url($youtube_link); ?>" frameborder="0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                    <?php endif; ?>
                 </div>
-            </div>
-        </section>
+            </section>
+            <?php
+        }
 
-    <?php 
-
-    return ob_get_clean();
+        wp_reset_postdata(); // Restablecer la consulta de posts
+        return ob_get_clean(); // Devolver el contenido capturado
+    } else {
+        return '<p class="text-muted text-center">No se encontró contenido para esta sección.</p>';
+    }
 }
-add_shortcode('ev-perfil-section', 'ev_perfil_shortcode');
-
-// Patreon & Apoyo Comunitario con Redes Sociales Shortcode
-function patreon_support_shortcode() {
-    // Obtener los valores de los campos de ACF
-    $patreon = get_field('patreon');
-    $patreon_url = $patreon['patreon_url'];
-    $support_message = $patreon['support_message'];
-
-    // Obtener enlaces a redes sociales de ACF
-    $links = get_field('rss');
-    $youtube_link = $links['youtube_link'];
-    $instagram_link = $links['instagram_link'];
-    $tiktok_link = $links['tiktok_link'];
-
-    ob_start();
-    ?>
-    <section id="support" class="py-5 bg-light text-center"> <!-- Sección con fondo claro -->
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <h2 class="mb-4 text-primary">Apoya Mi Trabajo</h2>
-                    <p class="lead text-muted mb-4"><?php echo esc_html($support_message); ?></p>
-                    
-                    <!-- Botón de Patreon -->
-                    <a href="<?php echo esc_url($patreon_url); ?>" target="_blank" class="btn btn-lg btn-patreon shadow-lg mb-3">
-                        Apóyame en Patreon <i class="bi bi-patreon"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Redes Sociales -->
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="social-links mt-4">
-                        <?php if ($youtube_link): ?>
-                            <a href="<?php echo esc_url($youtube_link); ?>" target="_blank" class="social-icon" aria-label="YouTube">
-                                <i class="bi bi-youtube"></i>
-                            </a>
-                        <?php endif; ?>
-                        <?php if ($instagram_link): ?>
-                            <a href="<?php echo esc_url($instagram_link); ?>" target="_blank" class="social-icon" aria-label="Instagram">
-                                <i class="bi bi-instagram"></i>
-                            </a>
-                        <?php endif; ?>
-                        <?php if ($tiktok_link): ?>
-                            <a href="<?php echo esc_url($tiktok_link); ?>" target="_blank" class="social-icon" aria-label="Tik Tok">
-                                <i class="bi bi-tiktok"></i>
-                            </a>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <?php
-    return ob_get_clean();
-}
-add_shortcode('patreon-support', 'patreon_support_shortcode');
-
+add_shortcode('community_gallery', 'community_membership_gallery_shortcode');
 
 // Función para crear el shortcode de calendario con eventos de ACF y modales
 function blog_calendar_events_shortcode() {

@@ -22571,4 +22571,51 @@ textarea.form-control-lg {
     width: 100%;
     margin: 10px 0;
   }
+}
+
+.community-membership {
+  background-color: var(--bs-secondary-opacity-5);
+  padding: 80px 0;
+}
+.community-membership .title {
+  margin-bottom: 30px;
+}
+.community-membership .title h2, .community-membership .title .h2 {
+  font-size: 2.5rem;
+  color: #FFD700;
+  font-family: "Cinzel", serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+.community-membership .title p {
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 10px;
+}
+.community-membership .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.community-membership .gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}
+.community-membership .gallery-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.community-membership .gallery-item .gallery-info {
+  margin-top: 15px;
+}
+.community-membership .gallery-item .gallery-info h5, .community-membership .gallery-item .gallery-info .h5 {
+  font-size: 1.2rem;
+  color: #FFD700;
+  font-family: "Cinzel", serif;
+}
+.community-membership .gallery-item .gallery-info p {
+  font-size: 1rem;
+  color: #555;
 }/*# sourceMappingURL=main.css.map */
