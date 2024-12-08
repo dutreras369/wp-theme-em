@@ -22574,7 +22574,7 @@ textarea.form-control-lg {
 }
 
 .community-membership {
-  background-color: var(--bs-secondary-opacity-5);
+  background-color: var(--bs-primary);
   padding: 80px 0;
 }
 .community-membership .gallery-item {
