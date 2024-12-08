@@ -22617,4 +22617,14 @@ textarea.form-control-lg {
 .community-membership .gallery-category .row .col-6 .small {
   color: #888;
   text-align: center;
+}
+
+/* Estilización personalizada para el Lightbox */
+.lb-container {
+  background-color: rgba(0, 0, 0, 0.9); /* Fondo más oscuro */
+}
+
+.lb-caption {
+  color: #FFD700; /* Texto dorado */
+  font-family: "Cinzel", serif;
 }/*# sourceMappingURL=main.css.map */
