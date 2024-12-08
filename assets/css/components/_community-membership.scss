@@ -1,42 +1,56 @@
 .community-membership {
-    background-color: var(--bs-primary);  // Fondo morado oscuro
+    background-color: var(--bs-primary); // Fondo suave
     padding: 80px 0;
 
-    .gallery-item {
-        position: relative;
-        overflow: hidden;
+    .maureen-photo {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 4px solid #FFD700; // Borde dorado
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .maureen-thought {
+        font-style: italic;
+        color: #666;
+        background-color: #f9f9f9;
+        border-left: 4px solid #FFD700;
+        padding: 1rem 2rem;
         border-radius: 10px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); // Sombra inicial
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    }
 
-        &:hover {
-            transform: scale(1.05); // Efecto de zoom
-            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.8); // Sombra dorada intensa
+    .gallery-category {
+        margin-bottom: 2rem;
+
+        h5 {
+            font-size: 1.2rem;
+            color: #FFD700;
+            font-family: 'Cinzel', serif;
         }
 
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            transition: filter 0.3s ease; // Transición para el brillo
-
-            &:hover {
-                filter: brightness(1.2); // Aumentar brillo al pasar el ratón
-            }
+        p {
+            font-size: 1rem;
+            color: #555;
         }
 
-        .gallery-info {
-            margin-top: 15px;
+        .row {
+            .col-6 {
+                img {
+                    width: 100%;
+                    border-radius: 10px;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-            h5 {
-                font-size: 1.2rem;
-                color: #FFD700;
-                font-family: 'Cinzel', serif;
-            }
+                    &:hover {
+                        transform: scale(1.05); // Zoom suave
+                        box-shadow: 0px 5px 20px rgba(255, 215, 0, 0.8); // Sombra dorada
+                    }
+                }
 
-            p {
-                font-size: 1rem;
-                color: #555;
+                .small {
+                    color: #888;
+                    text-align: center;
+                }
             }
         }
     }

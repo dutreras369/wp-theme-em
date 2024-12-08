@@ -270,39 +270,44 @@ function community_membership_gallery_shortcode() {
         while ($data->have_posts()) {
             $data->the_post();
 
-            // Obtener campos personalizados de la página
-            $maureen_image = get_field('maureen_image'); // Imagen de Maureen
-            $maureen_thought = get_field('maureen_thought'); // Pensamiento de Maureen
-            $gallery_items = get_field('community_gallery'); // Galería de imágenes
+            // Obtener el grupo de descripción
+            $description_group = get_field('description_group'); // Grupo con la imagen y pensamiento
+            $maureen_thought = $description_group['maureen_thought'];
+            $maureen_image = $description_group['maureen_image'];
+
+            // Obtener el grupo de la galería
+            $community_gallery_group = get_field('community_gallery_group'); // Grupo principal de la galería
 
             ?>
             <section class="community-membership py-5" id="community">
                 <div class="container">
                     <!-- Sección de Maureen -->
-                    <div class="row align-items-center mb-5">
-                        <div class="col-md-4 text-center">
-                            <?php if ($maureen_image): ?>
-                                <img src="<?php echo esc_url($maureen_image['url']); ?>" alt="<?php echo esc_attr($maureen_image['alt']); ?>" class="img-fluid rounded-circle maureen-photo">
-                            <?php endif; ?>
+                    <?php if ($description_group): ?>
+                        <div class="row align-items-center mb-5">
+                            <div class="col-md-4 text-center">
+                                <?php if ($maureen_image): ?>
+                                    <img src="<?php echo esc_url($maureen_image['url']); ?>" alt="<?php echo esc_attr($maureen_image['alt']); ?>" class="img-fluid rounded-circle maureen-photo">
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-md-8">
+                                <blockquote class="maureen-thought text-center text-md-start">
+                                    <p class="fs-4 text-muted"><?php echo esc_html($maureen_thought); ?></p>
+                                </blockquote>
+                            </div>
                         </div>
-                        <div class="col-md-8">
-                            <blockquote class="maureen-thought text-center text-md-start">
-                                <p class="fs-4 text-muted"><?php echo esc_html($maureen_thought); ?></p>
-                            </blockquote>
-                        </div>
-                    </div>
+                    <?php endif; ?>
 
                     <!-- Galería -->
-                    <?php if ($gallery_items): ?>
+                    <?php if ($community_gallery_group): ?>
                         <div class="title text-center mb-4">
                             <h2 class="text-gold">Comunidad y Membresía</h2>
                             <p class="text-muted">Explora los beneficios de unirte a nuestra comunidad y disfruta de contenido exclusivo.</p>
                         </div>
                         <div class="row g-4">
-                            <?php foreach ($gallery_items as $item): 
-                                $image = $item['image']; // Imagen de la galería
+                            <?php foreach ($community_gallery_group as $item_key => $item): 
                                 $title = $item['title']; // Título del beneficio
-                                $description = $item['description']; // Descripción breve
+                                $image = $item['image']; // Imagen asociada
+                                $description = $item['description']; // Breve descripción
                                 ?>
                                 <div class="col-md-4">
                                     <div class="gallery-item shadow-sm">
