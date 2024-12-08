@@ -72,8 +72,8 @@
         }
 
         img {
-            width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
-            height: 200px; /* Establece una altura uniforme */
+            width: 33%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+            height: 300px; /* Establece una altura uniforme */
             object-fit: cover; /* Recorta la imagen para que se ajuste al contenedor */
             border-radius: 10px; /* Mantiene las esquinas redondeadas */
             transition: filter 0.3s ease;
