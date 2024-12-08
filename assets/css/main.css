@@ -22581,14 +22581,14 @@ textarea.form-control-lg {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 4px solid #FFD700;
+  border: 4px solid #ffd700;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
 }
 .community-membership .maureen-thought {
   font-style: italic;
   color: #666;
   background-color: #f9f9f9;
-  border-left: 4px solid #FFD700;
+  border-left: 4px solid #ffd700;
   padding: 1rem 2rem;
   border-radius: 10px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
@@ -22598,7 +22598,7 @@ textarea.form-control-lg {
 }
 .community-membership .gallery-category h5, .community-membership .gallery-category .h5 {
   font-size: 1.2rem;
-  color: #FFD700;
+  color: #ffd700;
   font-family: "Cinzel", serif;
 }
 .community-membership .gallery-category p {
@@ -22618,6 +22618,28 @@ textarea.form-control-lg {
   color: #888;
   text-align: center;
 }
+.community-membership .gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.community-membership .gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 20px rgba(255, 215, 0, 0.8);
+}
+.community-membership .gallery-item img {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho del contenedor */
+  height: 200px; /* Establece una altura uniforme */
+  -o-object-fit: cover;
+     object-fit: cover; /* Recorta la imagen para que se ajuste al contenedor */
+  border-radius: 10px; /* Mantiene las esquinas redondeadas */
+  transition: filter 0.3s ease;
+}
+.community-membership .gallery-item img:hover {
+  filter: brightness(1.2);
+}
 
 /* Estilización personalizada para el Lightbox */
 .lb-container {
@@ -22625,6 +22647,6 @@ textarea.form-control-lg {
 }
 
 .lb-caption {
-  color: #FFD700; /* Texto dorado */
+  color: #ffd700; /* Texto dorado */
   font-family: "Cinzel", serif;
 }/*# sourceMappingURL=main.css.map */
