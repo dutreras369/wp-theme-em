@@ -532,11 +532,11 @@ function free_resources_shortcode() {
                         <div class="col-md-4 text-center">
                             <div class="resource-item shadow-sm">
                                 <div class="resource-icon mb-3">
-                                    <i class="bi bi-youtube text-danger display-4"></i>
+                                    <i class="bi bi-youtube text-white display-4"></i>
                                 </div>
                                 <h5 class="text-gold">Canal de YouTube</h5>
                                 <p class="text-muted">Accede a nuestro contenido exclusivo en video.</p>
-                                <a href="<?php echo esc_url($youtube_link); ?>" target="_blank" class="btn btn-gold">Ver en YouTube</a>
+                                <a href="<?php echo esc_url($youtube_link); ?>" target="_blank" class="btn btn-gold text-dark">Ver en YouTube</a>
                             </div>
                         </div>
                         <?php endif; ?>
@@ -546,11 +546,11 @@ function free_resources_shortcode() {
                         <div class="col-md-4 text-center">
                             <div class="resource-item shadow-sm">
                                 <div class="resource-icon mb-3">
-                                    <i class="bi bi-mic-fill text-primary display-4"></i>
+                                    <i class="bi bi-mic-fill text-white display-4"></i>
                                 </div>
                                 <h5 class="text-gold">Podcast</h5>
                                 <p class="text-muted">Escucha nuestras reflexiones y conocimientos.</p>
-                                <a href="<?php echo esc_url($podcast_link); ?>" target="_blank" class="btn btn-gold">Escuchar Podcast</a>
+                                <a href="<?php echo esc_url($podcast_link); ?>" target="_blank" class="btn btn-gold text-dark">Escuchar Podcast</a>
                             </div>
                         </div>
                         <?php endif; ?>
@@ -560,11 +560,11 @@ function free_resources_shortcode() {
                         <div class="col-md-4 text-center">
                             <div class="resource-item shadow-sm">
                                 <div class="resource-icon mb-3">
-                                    <i class="bi bi-book-fill text-success display-4"></i>
+                                    <i class="bi bi-book-fill text-white display-4"></i>
                                 </div>
                                 <h5 class="text-gold">Ebook Gratuito</h5>
                                 <p class="text-muted"><?php echo esc_html($ebook_description); ?></p>
-                                <a href="<?php echo esc_url($calendly_link); ?>" target="_blank" class="btn btn-gold"><?php echo esc_html($ebook_button_text); ?></a>
+                                <a href="<?php echo esc_url($calendly_link); ?>" target="_blank" class="btn btn-gold text-dark"><?php echo esc_html($ebook_button_text); ?></a>
                             </div>
                         </div>
                         <?php endif; ?>
