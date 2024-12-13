@@ -472,3 +472,110 @@ function blog_page_testimonials_shortcode() {
 }
 
 add_shortcode('ev-testimonios', 'blog_page_testimonials_shortcode');
+
+
+function ev_intro_video_modal_shortcode()
+{
+    ob_start(); ?>
+    <!-- Modal -->
+    <div class="modal fade" id="IntroVideoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title text-primary" id="videoModalLabel">El Despertar de Espacios Virtuales</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="#" title="Introduccion Escuela Misitica" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php
+    return ob_get_clean();
+}
+add_shortcode('ev_intro_video_modal', 'ev_intro_video_modal_shortcode');
+
+
+function free_resources_shortcode() {
+    // Obtener datos de la página con el slug 'recursos-gratuitos'
+    $data = blog_get_page(array('recursos-gratuitos'));
+
+    if ($data->have_posts()) {
+        ob_start(); // Captura de salida
+
+        while ($data->have_posts()) {
+            $data->the_post();
+
+            // Obtener campos personalizados
+            $free_resources = get_field('free_resources_group');
+            $youtube_link = $free_resources['youtube_link'];
+            $podcast_link = $free_resources['podcast_link'];
+            $ebook_description = $free_resources['ebook_description'];
+            $ebook_button_text = $free_resources['ebook_button_text'];
+            $calendly_link = $free_resources['calendly_link']; // Link a Calendly
+
+            ?>
+            <section class="free-resources py-5" id="free-resources">
+                <div class="container">
+                    <div class="title text-center mb-4">
+                        <h2 class="text-gold">Recursos Gratuitos</h2>
+                        <p class="text-muted">Explora una muestra de lo que podemos ofrecerte.</p>
+                    </div>
+                    <div class="row g-4">
+                        <!-- YouTube -->
+                        <?php if ($youtube_link): ?>
+                        <div class="col-md-4 text-center">
+                            <div class="resource-item shadow-sm">
+                                <div class="resource-icon mb-3">
+                                    <i class="bi bi-youtube text-danger display-4"></i>
+                                </div>
+                                <h5 class="text-gold">Canal de YouTube</h5>
+                                <p class="text-muted">Accede a nuestro contenido exclusivo en video.</p>
+                                <a href="<?php echo esc_url($youtube_link); ?>" target="_blank" class="btn btn-gold">Ver en YouTube</a>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+
+                        <!-- Podcast -->
+                        <?php if ($podcast_link): ?>
+                        <div class="col-md-4 text-center">
+                            <div class="resource-item shadow-sm">
+                                <div class="resource-icon mb-3">
+                                    <i class="bi bi-mic-fill text-primary display-4"></i>
+                                </div>
+                                <h5 class="text-gold">Podcast</h5>
+                                <p class="text-muted">Escucha nuestras reflexiones y conocimientos.</p>
+                                <a href="<?php echo esc_url($podcast_link); ?>" target="_blank" class="btn btn-gold">Escuchar Podcast</a>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+
+                        <!-- Ebook + Calendly -->
+                        <?php if ($ebook_description && $calendly_link): ?>
+                        <div class="col-md-4 text-center">
+                            <div class="resource-item shadow-sm">
+                                <div class="resource-icon mb-3">
+                                    <i class="bi bi-book-fill text-success display-4"></i>
+                                </div>
+                                <h5 class="text-gold">Ebook Gratuito</h5>
+                                <p class="text-muted"><?php echo esc_html($ebook_description); ?></p>
+                                <a href="<?php echo esc_url($calendly_link); ?>" target="_blank" class="btn btn-gold"><?php echo esc_html($ebook_button_text); ?></a>
+                            </div>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </section>
+            <?php
+        }
+
+        wp_reset_postdata(); // Restablecer la consulta de posts
+        return ob_get_clean(); // Devolver el contenido capturado
+    } else {
+        return '<p class="text-muted text-center">No se encontró contenido para esta sección.</p>';
+    }
+}
+add_shortcode('free_resources', 'free_resources_shortcode');

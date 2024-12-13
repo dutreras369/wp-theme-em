@@ -127,8 +127,24 @@ jQuery(document).ready(function ($) {
         });
     } */
 
+  // Modal de introducción
+  function handleIntroVideoModal() {
+    const introVideoModal = new bootstrap.Modal(
+      document.getElementById("IntroVideoModal")
+    );
+    if (introVideoModal) {
+      setTimeout(() => {
+        introVideoModal.show();
+      }, 1000); // Retraso de 1 segundo
+    } else {
+      // Si no existe, no hacer nada para evitar errores
+      console.warn("Modal IntroVideoModal no encontrado en la página.");
+    }
+  }
+
   handleMenuNavigation();
   handleHeroCarousel();
   animateText();
+  handleIntroVideoModal();
   /* handleSubscriptionForm(); */
 });
