@@ -476,6 +476,8 @@ add_shortcode('ev-testimonios', 'blog_page_testimonials_shortcode');
 
 function ev_intro_video_modal_shortcode()
 {
+    $link_video_intro = get_field('link_video_intro');
+
     ob_start(); ?>
     <!-- Modal -->
     <div class="modal fade" id="IntroVideoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
@@ -487,7 +489,7 @@ function ev_intro_video_modal_shortcode()
                 </div>
                 <div class="modal-body">
                     <div class="ratio ratio-16x9">
-                        <iframe src="#" title="Introduccion Escuela Misitica" frameborder="0" allowfullscreen></iframe>
+                        <iframe src="<?php echo esc_url($link_video_intro); ?>" title="Introduccion Escuela Misitica" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -578,4 +580,4 @@ function free_resources_shortcode() {
         return '<p class="text-muted text-center">No se encontró contenido para esta sección.</p>';
     }
 }
-add_shortcode('free_resources', 'free_resources_shortcode');
+add_shortcode('ev_free_resources', 'free_resources_shortcode');
