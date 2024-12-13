@@ -334,7 +334,7 @@ function community_membership_gallery_shortcode() {
         return '<p class="text-muted text-center">No se encontró contenido para esta sección.</p>';
     }
 }
-add_shortcode('ev_community_member', 'community_membership_gallery_shortcode');
+add_shortcode('ev-community_member', 'community_membership_gallery_shortcode');
 
 // Función para crear el shortcode de calendario con eventos de ACF y modales
 function blog_calendar_events_shortcode() {
