@@ -390,7 +390,7 @@ function blog_calendar_events_shortcode() {
 
     return ob_get_clean();
 }
-add_shortcode('ev_calendar_eventos', 'blog_calendar_events_shortcode');
+add_shortcode('ev-calendar_eventos', 'blog_calendar_events_shortcode');
 function blog_page_testimonials_shortcode() {
     // Obtener los testimonios
     $data = blog_get_custom_post_type('testimonial', 9);
@@ -498,7 +498,7 @@ function ev_intro_video_modal_shortcode()
 <?php
     return ob_get_clean();
 }
-add_shortcode('ev_intro_video_modal', 'ev_intro_video_modal_shortcode');
+add_shortcode('ev-intro_video_modal', 'ev_intro_video_modal_shortcode');
 
 
 function free_resources_shortcode() {
@@ -580,4 +580,4 @@ function free_resources_shortcode() {
         return '<p class="text-muted text-center">No se encontró contenido para esta sección.</p>';
     }
 }
-add_shortcode('ev_free_resources', 'free_resources_shortcode');
+add_shortcode('ev-free_resources', 'free_resources_shortcode');
