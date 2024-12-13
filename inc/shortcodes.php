@@ -536,7 +536,7 @@ function free_resources_shortcode() {
                                 </div>
                                 <h5 class="text-gold">Canal de YouTube</h5>
                                 <p class="text-muted">Accede a nuestro contenido exclusivo en video.</p>
-                                <a href="<?php echo esc_url($youtube_link); ?>" target="_blank" class="btn btn-gold text-dark">Ver en YouTube</a>
+                                <a href="<?php echo esc_url($youtube_link); ?>" target="_blank" class="btn btn-primary">Ver en YouTube</a>
                             </div>
                         </div>
                         <?php endif; ?>
@@ -550,7 +550,7 @@ function free_resources_shortcode() {
                                 </div>
                                 <h5 class="text-gold">Podcast</h5>
                                 <p class="text-muted">Escucha nuestras reflexiones y conocimientos.</p>
-                                <a href="<?php echo esc_url($podcast_link); ?>" target="_blank" class="btn btn-gold text-dark">Escuchar Podcast</a>
+                                <a href="<?php echo esc_url($podcast_link); ?>" target="_blank" class="btn btn-primary">Escuchar Podcast</a>
                             </div>
                         </div>
                         <?php endif; ?>
@@ -564,7 +564,7 @@ function free_resources_shortcode() {
                                 </div>
                                 <h5 class="text-gold">Ebook Gratuito</h5>
                                 <p class="text-muted"><?php echo esc_html($ebook_description); ?></p>
-                                <a href="<?php echo esc_url($calendly_link); ?>" target="_blank" class="btn btn-gold text-dark"><?php echo esc_html($ebook_button_text); ?></a>
+                                <a href="<?php echo esc_url($calendly_link); ?>" target="_blank" class="btn btn-primary"><?php echo esc_html($ebook_button_text); ?></a>
                             </div>
                         </div>
                         <?php endif; ?>
