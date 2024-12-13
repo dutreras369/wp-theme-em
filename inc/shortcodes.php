@@ -143,7 +143,7 @@ function ev_about_shortcode() {
     }
     wp_reset_postdata();
 }
-add_shortcode('ev-sobre-nosotros', 'ev_about_shortcode');
+add_shortcode('ev-sobre_nosotros', 'ev_about_shortcode');
 
 
 function ev_subscribe_modal()
