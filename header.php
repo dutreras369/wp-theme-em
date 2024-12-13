@@ -33,18 +33,18 @@
                 <div class="col d-flex justify-content-center justify-content-md-end">
                     <ul class="announcement-bar__list ml-2">
                         <li>
-                            <a class="text-white text-decoration-none" href="https://www.youtube.com/@dustrel963">
+                            <a class="text-white text-decoration-none" href="https://www.youtube.com/@Momistica">
                                 <i class="bi bi-youtube rounded-circle"></i>
                             </a>
                         </li>
                         <li>
-                            <a class="text-white text-decoration-none" href="https://www.instagram.com/dustrel963/">
+                            <a class="text-white text-decoration-none" href="https://www.instagram.com/momistica/">
                                 <i class="bi bi-instagram rounded-circle"></i>
                             </a>
                         </li>
                         <li>
-                            <a class="text-white text-decoration-none" href="#">
-                                <i class="bi bi-tiktok rounded-circle"></i>
+                            <a class="text-white text-decoration-none" href="https://web.facebook.com/momistica">
+                                <i class="bi bi-facebook rounded-circle"></i>
                             </a>
                         </li>
                     </ul>
