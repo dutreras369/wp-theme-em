@@ -484,7 +484,7 @@ function ev_intro_video_modal_shortcode()
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title text-primary" id="videoModalLabel">El Despertar de Espacios Virtuales</h5>
+                    <h5 class="modal-title text-white" id="videoModalLabel">Bienvenido a Escuela Mistica</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
